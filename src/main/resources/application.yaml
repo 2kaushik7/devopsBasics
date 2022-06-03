@@ -1,0 +1,4 @@
+greeting:
+  value: Hello Sai
+server:
+  port: 5678
