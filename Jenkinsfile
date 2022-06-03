@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                java -jar devopsBasics-v1.jar
+              sh 'mvn clean install -DskipTests'
+              sh 'java -jar devopsBasics-v1.jar'
             }
         }
     }
