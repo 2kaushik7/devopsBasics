@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'echo sai'
+                sh 'mvn clean'
             }
         }
     }
