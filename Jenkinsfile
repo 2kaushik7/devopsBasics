@@ -9,6 +9,12 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean package' 
+                mvn spring-boot:run
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                mvn spring-boot:run
             }
         }
     }
