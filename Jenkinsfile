@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                mvn spring-boot:run
+                sh 'mvn spring-boot:run'
             }
         }
     }
