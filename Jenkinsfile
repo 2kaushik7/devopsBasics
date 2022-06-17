@@ -5,10 +5,15 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
+    environment {
+    	MVN_BUILD = 'clean install'
+    
+    }
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+            	sh 'echo using env variable : ${{MVN_BUILD}'
+                sh 'mvn -B -DskipTests ${MVN_BUILD}' 
             }
         }
         stage('Test') { 
