@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-            	sh 'echo using env variable : ${{MVN_BUILD}'
+            	sh 'echo using env variable : ${MVN_BUILD}'
                 sh 'mvn -B -DskipTests ${MVN_BUILD}' 
             }
         }
