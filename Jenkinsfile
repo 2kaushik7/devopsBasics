@@ -21,5 +21,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
+  	post {
+	    success {
+	        mail to: 'kaushik.sst@gmail.com',
+	             subject: "success Pipeline",
+	             body: "went well"
+	    	}
+		}      
     }
 }
