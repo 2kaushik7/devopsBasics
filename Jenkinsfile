@@ -11,12 +11,6 @@ pipeline {
     
     }
     stages {
-    	stage('Initialize') {        
-    		steps {
-    			echo "def dockerHome = tool 'mydocker'"        
-    			echo "env.PATH = ${dockerHome}/bin:${env.PATH}"    
-    		}
-    	}
         stage('Build') { 
             steps {
             	sh 'echo using env variable : ${MVN_BUILD}'
@@ -30,8 +24,8 @@ pipeline {
         }
         stage('Deploy') {
         	steps{
-        		sh 'docker build --platform linux/amd64 -t devops-basics . '
-        		sh 'docker run devops-basics'
+        		sh 'sudo docker build  --platform linux/amd64 -t devops-basics . '
+        		sh 'sudo docker run devops-basics'
         	}
   	    }  
     }
