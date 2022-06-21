@@ -21,13 +21,9 @@ pipeline {
                 sh 'mvn test'
             }
         }
-  	      
+        stage('Deploy') {
+        	sh 'docker build --platform linux/amd64 -t devops-basics .'
+  	    }  
     }
-    post {
-	    success {
-	        mail to: 'kaushik.sst@gmail.com',
-	             subject: "success Pipeline",
-	             body: "went well"
-	    	}
-		}
+  
 }
