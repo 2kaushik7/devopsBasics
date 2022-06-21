@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
     	MVN_BUILD = 'clean install'
+    	PATH = "$PATH:/usr/local/bin"
     
     }
     stages {
