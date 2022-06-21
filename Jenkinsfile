@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
         	steps{
-        		sh 'docker build --platform linux/amd64 -t devops-basics .'
+        		sh '/Applications/Docker.app/Contents/Resources/bin/docker build --platform linux/amd64 -t devops-basics .'
         	}
   	    }  
     }
