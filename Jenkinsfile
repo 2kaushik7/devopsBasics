@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Deploy') {
         	steps{
-        		sh 'sudo docker build  --platform linux/amd64 -t devops-basics . '
-        		sh 'sudo docker run devops-basics'
+        		sh 'docker build --privileged --platform linux/amd64 -t devops-basics . '
+        		sh 'docker run --privileged devops-basics'
         	}
   	    }  
     }
