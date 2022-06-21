@@ -22,7 +22,9 @@ pipeline {
             }
         }
         stage('Deploy') {
-        	sh 'docker build --platform linux/amd64 -t devops-basics .'
+        	steps{
+        		sh 'docker build --platform linux/amd64 -t devops-basics .'
+        	}
   	    }  
     }
   
