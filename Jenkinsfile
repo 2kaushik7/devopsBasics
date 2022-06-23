@@ -11,12 +11,7 @@ pipeline {
     
     }
     stages {
-    	stage('Initialize') {        
-    		steps {
-    			echo "def dockerHome = tool 'mydocker'"        
-    			env.PATH = "${dockerHome}/bin:${env.PATH}""    
-    		}
-    	}
+    	
         stage('Build') { 
             steps {
             	sh 'echo using env variable : ${MVN_BUILD}'
