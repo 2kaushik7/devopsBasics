@@ -8,7 +8,9 @@ pipeline {
     stages {
         
         stage('compile'){
-        
+        	steps {
+        		echo 'compile-Raja'
+        	}
         }
     }
  
