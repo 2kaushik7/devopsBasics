@@ -3,6 +3,9 @@ pipeline {
         docker {
             image 'ubuntu'
         }
+        stages {
+        
+        }
     }
  
   
